@@ -1,0 +1,148 @@
+/* General body styles */
+body {
+    background: #e0f7fa; /* Soft light cyan background */
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif; /* Stylish, modern font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: linear-gradient(45deg, #e0f7fa, #80deea); /* Subtle gradient */
+}
+
+/* Grid for game tiles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 30px; /* More space between tiles */
+    max-width: 1200px;
+    width: 90%;
+    justify-items: center; /* Center tiles horizontally */
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Style for each game tile */
+.data-id {
+    background: linear-gradient(145deg, #ffffff, #b2ebf2); /* Soft gradient background for tiles */
+    width: 220px; /* Increased tile size */
+    height: 220px; /* Increased tile height */
+    border: 5px solid #00796b; /* Teal border */
+    border-radius: 15px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-id:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Button styling */
+button {
+    margin: 20px;
+    background: #00796b;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+button:hover {
+    background: #004d40; /* Darker teal on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Styling for the score and time counters */
+span {
+    border: 3px solid #00796b;
+    padding: 8px 16px;
+    background: #ffffff;
+    margin-right: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 12px;
+    color: #00796b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Layout and design of the content block */
+.content {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 3px solid #00796b;
+    margin: 20px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Display the individual stats like score, fails, and time */
+.minspan {
+    display: inline-block;
+    margin: 15px 0;
+    font-size: 20px;
+    color: #00796b;
+}
+
+/* Add a custom game over message style */
+.game-over {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d32f2f;
+    text-align: center;
+    margin-top: 40px;
+    background: #fff3e0;
+    padding: 20px;
+    border: 3px solid #d32f2f;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* More responsive grid */
+    }
+
+    .data-id {
+        width: 180px; /* Adjust tile size for smaller screens */
+        height: 180px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .content {
+        font-size: 20px;
+        padding: 1.2em;
+    }
+
+    span {
+        font-size: 16px;
+    }
+}

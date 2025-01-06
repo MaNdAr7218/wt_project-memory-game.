@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Game container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align the content from the top */
+  align-items: center; /* Horizontally center the content */
+  height: 100vh; 
+  /* Take full screen height */
+  background-color: #f3f3f3;
+  padding: 20px;
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Game info (Score, Fails, Time) */
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  overflow: hidden; /* Prevent overflow of info items */
+}
+
+.game-info div {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+}
+
+/* Grid container */
+.grid-container {
+  display: flex;
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center; /* Center the grid vertically */
+  flex-wrap: wrap; /* Allow wrapping of grid items */
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 800px; /* Max width of the grid */
+  margin-bottom: 30px;
+  height: auto; /* Allow the grid height to adjust based on the content */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Grid styling */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjusts based on available width */
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden; /* Prevent overflow of grid items */
+}
+
+/* Card styling */
+.card {
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  object-fit: cover;
+}
+
+/* Finish button */
+.finish-button {
+  margin-top: 30px; /* Add space between the grid and the finish button */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.finish-button button {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 200px;
+  transition: background-color 0.3s;
+}
+
+.finish-button button:hover {
+  background-color: #e53935;
+}
+
+.finish-button button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+/* Game status message */
+.game-status {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Start button */
+.start-button {
+  padding: 15px 30px;
+  background-color: #ff6347; /* Tomato color for the button */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-bottom: 20px;
+}
+
+.start-button:hover {
+  background-color: #ff4500; /* Darker shade of tomato */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.start-button:active {
+  background-color: #e03c00; /* Even darker shade when pressed */
+}
+
+.start-button:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Game status message */
+.game-status {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff0000; /* Bright red for emphasis */
+  text-align: center;
+  text-transform: uppercase; /* All caps for added sarcasm */
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font for more emphasis */
+  background-color: #fff3f3; /* Light pink background to highlight the sarcasm */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+  border: 2px solid #ff0000; /* Red border to match the tone */
+}
+
+/* Shared button styles */
+.action-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px; /* Add margin to separate buttons */
+  color: white;
+}
+
+/* Specific styles for Go to Home button */
+.go-home-button {
+  background-color: #4caf50; /* Green background for Home */
+}
+
+.go-home-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.go-home-button:active {
+  background-color: #3e8e41; /* Even darker green when pressed */
+}
+
+/* Specific styles for Retry button */
+.retry-button {
+  background-color: #4caf50; /* Tomato background for Retry */
+}
+
+.retry-button:hover {
+  background-color: #45a049; /* Darker tomato on hover */
+}
+
+.retry-button:active {
+  background-color: #3e8e41; /* Even darker tomato when pressed */
+}
+
+/* Shared button focus style */
+.action-button:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Shared button active (click effect) */
+.action-button:active {
+  transform: scale(0.95); /* Slight shrink effect when clicked */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .game-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .grid-container {
+    margin-top: 20px;
+    height: auto; /* Allow flexibility in height */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .card {
+    height: 80px; /* Smaller card size for mobile */
+  }
+
+  .finish-button button {
+    width: 150px; /* Adjust button size on small screens */
+  }
+
+  .start-button {
+    width: 100%; /* Full-width start button on smaller screens */
+  }
+}
